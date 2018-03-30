@@ -28,12 +28,12 @@ func _unhandled_input(ev):
 	if (ev is InputEventMouseButton and ev.button_index == BUTTON_WHEEL_UP):
 		if (zoom<ZOOM_MAX):
 			zoom+=ZOOM_SPEED
-			get_parent().get_node("camera/base/rotation/camera").translation.z = -zoom
+			get_parent().get_node("camera/base/rotation/Camera").translation.z = -zoom
 
 	if (ev is InputEventMouseButton and ev.button_index == BUTTON_WHEEL_DOWN):
 		if (zoom>0):
 			zoom-=ZOOM_SPEED
-			get_parent().get_node("camera/base/rotation/camera").translation.z = -zoom
+			get_parent().get_node("camera/base/rotation/Camera").translation.z = -zoom
 
 	if (ev is InputEventMouseMotion and ev.button_mask & BUTTON_MASK_LEFT):
 		rot_y += ev.relative.x * ROT_SPEED
